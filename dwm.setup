@@ -1,0 +1,33 @@
+# this setup does not belong to dwm files.
+
+# dwm backend portals configuration (recommended):
+1) create ~/.config/environment.d/ then touch 10-env-var.conf in it.
+2) define all needed environment variable that you need (that dwm cannot find) like: XDG_CURRENT_DESKTOP, DISPLAY ..., as follows: 
+	XDG_CURRENT_DESKTOP=dwm
+	DISPLAY=:0
+3) put the following in ~/.xinitrc (create if doesn't exist):
+	#get any defined environment variables in ~/.config/environment.d/ and put them in the following commands:	
+	systemctl --user import-environment XDG_CURRENT_DESKTOP DISPLAY	
+	dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP=dwm DISPLAY=:0
+
+# dwm backend portals another way configuration:
+* export environment variables dwm could not find in ~/.xinitrc
+
+# dwm execution (startup automatically):
+1) install startx 
+2) append `exec dwm` (remove backticks `) in ~/.xinitrc
+3) append `exec startx dwm` (remove backticks `) in ~/.bash_profile
+4) reboot
+
+# set keyboard layout us & ara:
+localectl set-x11-keymap us,ara acer_laptop , grp:win_space_toggle #for win+space toggle
+localectl set-x11-keymap us,ara acer_laptop , grp:alt_shift_toggle #for alt+shift toggle
+
+# dwm hidden wifi connection:
+nmcli -a device wifi connect dlink hidden yes private yes
+
+# dwm default theme to dark:
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+
+# suckless surf compilation problems:
+install: webkit2gtk-4.(something) & gcr 
