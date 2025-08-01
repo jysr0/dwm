@@ -5,8 +5,8 @@ static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 6;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "CaskaydiaMonoNerdFontMono:size=10" };
-static const char dmenufont[]       = "CaskaydiaMonoNerdFontMono:size=10";
+static const char *fonts[]          = { "CaskaydiaMonoNerdFontMono-SemiLight:size=10" };
+static const char dmenufont[]       = "CaskaydiaMonoNerdFontMono-SemiLight:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -127,9 +127,9 @@ static const Key keys[] = {
 	{ 0,                       XF86XK_MonBrightnessDown,  spawn,          SHCMD("brightnessctl set 1%- && pkill -RTMIN+2 dwmblocks") },
 	
 	/* audio control */	
-	{ 0,                       XF86XK_AudioRaiseVolume, spawn,       SHCMD("pulseaudio-ctl up 2% && pkill -RTMIN+5 dwmblocks") },
-	{ 0,                       XF86XK_AudioLowerVolume,  spawn,          SHCMD("pulseaudio-ctl down 2% && pkill -RTMIN+5 dwmblocks") },
-	{ 0,                       XF86XK_AudioMute, spawn,          SHCMD("pulseaudio-ctl mute") },
+	{ 0,                       XF86XK_AudioRaiseVolume, spawn,       SHCMD("pamixer -i 2 && pkill -RTMIN+5 dwmblocks") },
+	{ 0,                       XF86XK_AudioLowerVolume,  spawn,          SHCMD("pamixer -d 2 && pkill -RTMIN+5 dwmblocks") },
+	{ 0,                       XF86XK_AudioMute, spawn,          SHCMD("pamixer -t && pkill -RTMIN+5 dwmblocks") },
 	
   	{ SUPER,                       XK_s,       spawn,         { .v = browsercmd } }, /* default browser */	
 
