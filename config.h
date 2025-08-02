@@ -12,13 +12,17 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
-static const char col_bloodred[]     = "#780606"; /* added */
-static const char col_ajor[]     = "#924441"; /* added */
-static const char col_pink[]     = "#FF0833"; /* added */
+static const char bloodred[]     = "#780606"; /* added */
+static const char ajor[]     = "#924441"; /* added */
+static const char pink[]     = "#FF0833"; /* added */
+static const char seal_brown[]     = "#321414"; /* added */
+static const char pullman_brown[]     = "#644117"; /* added */
+static const char cyan[]     = "#008b8b"; /* added */
+static const char dark[]     = "#000000"; /* added */
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan, col_cyan },
+	[SchemeNorm] = { col_gray3, pullman_brown, col_gray2 },
+	[SchemeSel]  = { col_gray4, dark, cyan },
 };
 
 /* tagging */
