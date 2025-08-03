@@ -17,12 +17,14 @@ static const char ajor[]     = "#924441"; /* added */
 static const char pink[]     = "#FF0833"; /* added */
 static const char seal_brown[]     = "#321414"; /* added */
 static const char pullman_brown[]     = "#644117"; /* added */
+static const char dark_chestnut[]     = "#986960"; /* added */
 static const char cyan[]     = "#008b8b"; /* added */
+static const char blue[]     = "#003366"; /* added */
 static const char dark[]     = "#000000"; /* added */
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, pullman_brown, col_gray2 },
-	[SchemeSel]  = { col_gray4, dark, cyan },
+	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+	[SchemeSel]  = { col_gray4, col_cyan, col_cyan },
 };
 
 /* tagging */
