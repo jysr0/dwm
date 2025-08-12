@@ -1,4 +1,5 @@
-/*
+/* /etc/X11
+ * 
  * XFree86 vendor specific keysyms.
  *
  * The XFree86 keysym range is 0x10080001 - 0x1008FFFF.
