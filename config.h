@@ -5,8 +5,10 @@ static const unsigned int borderpx  = 2;        /* border pixel of windows */   
 static const unsigned int snap      = 12;       /* snap pixel */                  //        -*-
 static const int showbar            = 1;        /* 0 means no bar */              //        -*-
 static const int topbar             = 1;        /* 0 means bottom bar */          //        -*-
-static const char *fonts[]          = {"CaskaydiaMono NFM SemiLight:size=10.5"};  //        -*-
-static const char dmenufont[]       = "CaskaydiaMono NFM SemiLight:size=10.5";    //        -*-
+// static const char *fonts[]          = {"CaskaydiaMono NFM SemiLight:size=10.5"};  //        -*-
+static const char *fonts[]          = {"LiterationMono Nerd Font Mono:size=10.5"};  //        -*-
+// static const char dmenufont[]       = "CaskaydiaMono NFM SemiLight:size=10.5";    //        -*-
+static const char dmenufont[]       = "LiterationMono Nerd Font Mono:size=10.5";    //        -*-
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -97,10 +99,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-
-
-
+	/* { MODKEY|ShiftMask,             XK_q,      quit,           {0} }, */
 };
 
 /* button definitions */
