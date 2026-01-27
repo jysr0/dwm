@@ -29,7 +29,7 @@ Look for config.def.h's keys array.
 [bulkill](https://dwm.suckless.org/patches/bulkill/), the "safe" one.  <br />
 [tiledmove](https://dwm.suckless.org/patches/tiledmove/).  <br />
 [togglefloatingcenter](https://dwm.suckless.org/patches/togglefloatingcenter/).  <br />
-[shift tools](https://dwm.suckless.org/patches/shift-tools/), the "*.c" one.  <br />
+[shift tools](https://dwm.suckless.org/patches/shift-tools/), the "\*.c" one.  <br />
 [alwayscenter](https://dwm.suckless.org/patches/alwayscenter/).  <br />
 [allowkillrule](https://dwm.suckless.org/patches/allowkillrule/).  <br />
 [pwkl](https://dwm.suckless.org/patches/pwkl/).  <br />
