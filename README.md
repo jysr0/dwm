@@ -4,7 +4,7 @@
 1. make sure `xorg-xinit' is installed, if not, install it based on your distro's package manager.
 2. append `exec startx dwm' at end of your bash_profile.
 3. clone the repo, (git clone https://github.com/jysr0/dwm-6.6 && cd dwm-6.6).
-4. IMPORTANT: configure config.def.h before continuing e.g. terminal and dmenu/rofi, or you'll get stuck.
+4. IMPORTANT: set your current terminal in config.def.h's termcmd (currently it is alacritty), or you'll get stuck.
 5. sudo make clean install
 6. reboot
 ### dwmblocks-async
