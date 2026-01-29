@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 10;       /* snap pixel */
 
 static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
@@ -15,18 +15,18 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int allowkill          = 1;        /* allow killing clients by default? */
 static const char *fonts[]          = { "CaskaydiaMono NFM:size=12", "Noto Color Emoji:pixelsize=14:antialias=true:autohint=true" };
 static const char dmenufont[]       = "CaskaydiaMono NFM:size=12";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#888888";
-static const char col_gray4[]       = "#bbbbbb";
+static const char col_gray1[]       = "#191919";
+static const char col_gray2[]       = "#333333";
+static const char col_gray3[]       = "#555555";
+static const char col_gray4[]       = "#aaaaaa";
 static const char col_gray5[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
-static const char col_void[]        = "#005555";
+static const char col_redb[]        = "#660000";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray4, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray5, col_void,  col_void  },
-	[SchemeHid]  = { col_gray3, col_gray1,  col_gray2  },
+	[SchemeSel]  = { col_gray5, col_gray1, col_redb  },
+	[SchemeHid]  = { col_gray3, col_gray1, col_gray2 },
 };
 
 /* tagging */
@@ -91,7 +91,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 //static const char *dmenucmd[] = { "rofi", "-show", "drun" };
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-i", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray4, "-sb", col_void, "-sf", col_gray5, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-i", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray4, "-sb", col_cyan, "-sf", col_gray5, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 #include "shift-tools.c"
 #include "bulkill.c"
