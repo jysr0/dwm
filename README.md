@@ -23,7 +23,6 @@ Look for config.def.h's keys array.
 [switchcol](https://dwm.suckless.org/patches/switchcol/).  <br />
 [decoration hints](https://dwm.suckless.org/patches/decoration_hints/).  <br />
 [moveresize](https://dwm.suckless.org/patches/moveresize/).  <br />
-[colorschemes](https://dwm.suckless.org/patches/colorschemes/).  <br />
 [statuscmd](https://dwm.suckless.org/patches/statuscmd/), "with signals" one.  <br />
 [zoomswap](https://dwm.suckless.org/patches/zoomswap/).  <br />
 [bulkill](https://dwm.suckless.org/patches/bulkill/), the "safe" one.  <br />
@@ -35,6 +34,7 @@ Look for config.def.h's keys array.
 [pwkl](https://dwm.suckless.org/patches/pwkl/).  <br />
 [inplacerotate](https://dwm.suckless.org/patches/inplacerotate/).  <br />
 [center](https://dwm.suckless.org/patches/center/).  <br />
+[sticky](https://dwm.suckless.org/patches/sticky/).  <br />
 ## LAYOUT PATCHES
 [nrowgrid](https://dwm.suckless.org/patches/nrowgrid/).  <br />
 [gaplessgrid](https://dwm.suckless.org/patches/gaplessgrid/).  <br />
