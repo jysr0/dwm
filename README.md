@@ -1,4 +1,4 @@
-# dwm-6.6_build
+# dwm-6.6 build
 ![](dwm-6.6.png)
 ## INSTALATION
 1. make sure `xorg-xinit' is installed, if not, install it based on your distro's package manager.
