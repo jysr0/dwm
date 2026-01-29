@@ -7,6 +7,7 @@
 4. IMPORTANT: set your current terminal in config.def.h's termcmd (currently it is alacritty), or you'll get stuck.
 5. sudo make clean install
 6. reboot
+7. 'WIN + shift + q' to quit dwm.
 ### dwmblocks-async
 Install and configure [dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async) with some scripts, and that's it.
 If some issues happen with the clicking see [issues](https://github.com/UtkarshVerma/dwmblocks-async/issues).
