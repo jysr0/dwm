@@ -25,8 +25,8 @@ static const char col_redb[]        = "#660000";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray4, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray5, col_gray1, col_redb  },
-	[SchemeHid]  = { col_gray3, col_gray1, col_gray2 },
+	[SchemeSel]  = { col_gray5, /*col_gray1*/ col_cyan, /*col_redb*/ col_cyan },
+	[SchemeHid]  = { /*col_gray3*/ col_cyan, col_gray1, col_gray2 },
 };
 
 /* tagging */
