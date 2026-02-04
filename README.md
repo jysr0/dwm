@@ -4,10 +4,10 @@
 1. make sure `xorg-xinit' is installed, if not, install it based on your distro's package manager.
 2. append `exec startx dwm' at end of your bash_profile.
 3. clone the repo, (git clone https://github.com/jysr0/dwm-6.6 && cd dwm-6.6).
-4. IMPORTANT: set your current terminal in config.def.h's termcmd (currently it is alacritty), or you'll get stuck.
+4. IMPORTANT: install dmenu (sudo pacman -S dmenu), or you'll get stuck.
 5. sudo make clean install
 6. reboot
-7. 'WIN + shift + q' to quit dwm.
+7. (win + r) to run a program, (win + shift + q) to quit dwm.
 ### dwmblocks-async
 Install and configure [dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async) with some scripts, and that's it.
 If some issues happen with the clicking see [issues](https://github.com/UtkarshVerma/dwmblocks-async/issues).
