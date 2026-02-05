@@ -17,7 +17,7 @@ Look for config.def.h's keys array.
 [hide vacant tags](https://dwm.suckless.org/patches/hide_vacant_tags/).  <br />
 [pertag](https://dwm.suckless.org/patches/pertag/).  <br />
 [attachdirection](https://dwm.suckless.org/patches/attachdirection/).  <br />
-[movestack](https://dwm.suckless.org/patches/movestack/).  <br />
+[push](https://dwm.suckless.org/patches/push/), the "no master" one.  <br />
 [switchcol](https://dwm.suckless.org/patches/switchcol/).  <br />
 [decoration hints](https://dwm.suckless.org/patches/decoration_hints/).  <br />
 [moveresize](https://dwm.suckless.org/patches/moveresize/).  <br />
