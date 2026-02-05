@@ -29,7 +29,6 @@ Look for config.def.h's keys array.
 [shift tools](https://dwm.suckless.org/patches/shift-tools/), the "scratchpads" one.  <br />
 [alwayscenter](https://dwm.suckless.org/patches/alwayscenter/).  <br />
 [allowkillrule](https://dwm.suckless.org/patches/allowkillrule/).  <br />
-[pwkl](https://dwm.suckless.org/patches/pwkl/).  <br />
 [inplacerotate](https://dwm.suckless.org/patches/inplacerotate/).  <br />
 [center](https://dwm.suckless.org/patches/center/).  <br />
 [sticky](https://dwm.suckless.org/patches/sticky/).  <br />
