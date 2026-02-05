@@ -26,22 +26,37 @@ static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray4, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray5, /*col_gray1*/ col_cyan, /*col_redb*/ col_cyan },
-	[SchemeHid]  = { /*col_gray3*/ col_cyan, col_gray1, col_gray2 },
+};
+
+// specify an app as scratchpad in scratchpads[], then optionaly specify a rule for it in rules[], then bind it to a keybind in keys[].
+// if a scratchpad wanted to be removed just remove its keybind.
+typedef struct {
+	const char *name;
+	const void *cmd;
+} Sp;
+const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
+const char *spcmd2[] = {"alacritty", "--class", "lf", "-e", "lfub", NULL };
+static Sp scratchpads[] = {
+	/* name          cmd  */
+	{"spterm",      spcmd1},
+	{"lf",          spcmd2},
 };
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
-    /* xprop(1):
-     *	WM_CLASS(STRING) = instance, class
-     *	WM_NAME(STRING) = title
-     */
-    /* class                 instance          title       tags mask     iscentered   isfloating   monitor */
-    { "Gimp",                NULL,             NULL,       0,            0,           1,           -1 },
-    { "Firefox",             NULL,             NULL,       0,            0,           0,           -1 },
-    { "mpv",                 NULL,             NULL,       0,            1,           1,           -1 },
-    { "Nsxiv",               NULL,             NULL,       0,            1,           1,           -1 },
+	/* xprop(1):
+	 *	WM_CLASS(STRING) = instance, class
+	 *	WM_NAME(STRING) = title
+	 */
+	/* class                 instance          title       tags mask     iscentered   isfloating   monitor */
+	{ "Gimp",                NULL,             NULL,       0,            0,           1,           -1 },
+	{ "Firefox",             NULL,             NULL,       0,            0,           0,           -1 },
+	{ "mpv",                 NULL,             NULL,       0,            1,           1,           -1 },
+	{ "Nsxiv",               NULL,             NULL,       0,            1,           1,           -1 },
+	{ NULL,                  "spterm",         NULL,       SPTAG(0),     0,           1,           -1 },
+	{ NULL,                  "lf",             NULL,       SPTAG(1),     0,           0,           -1 },
 };
 
 /* layout(s) */
@@ -93,7 +108,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 //static const char *dmenucmd[] = { "rofi", "-show", "drun" };
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-i", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray4, "-sb", col_cyan, "-sf", col_gray5, NULL };
 static const char *termcmd[]  = { "st", NULL };
-#include "shift-tools.c"
+#include "shift-tools-scratchpads.c"
 #include "bulkill.c"
 #include "movestack.c"
 static const Key keys[] = {
@@ -101,7 +116,10 @@ static const Key keys[] = {
     { MODKEY,                                       XK_r,                     spawn,                         {.v = dmenucmd } },
     { MODKEY,                                       XK_Return,                spawn,                         {.v = termcmd } },
     { MODKEY,                                       XK_b,                     togglebar,                     {0} },
-    
+   
+    { MODKEY,            			    XK_z,  	              togglescratch,                 {.ui = 0 } },
+    //{ MODKEY|ShiftMask,            		    XK_e,	              togglescratch,                 {.ui = 1 } },
+
     { MODKEY|Mod1Mask,                              XK_s,                     togglesticky,                  {0} },
     
     { Mod1Mask,                                     XK_o,                     shiftviewclients,              { .i = +1 } },
@@ -129,10 +147,9 @@ static const Key keys[] = {
     { MODKEY|ControlMask|ShiftMask,                 XK_h,                     inplacerotate,                 {.i = +2} },
     { MODKEY|ControlMask|ShiftMask,                 XK_l,                     inplacerotate,                 {.i = -2} },
     
-    { MODKEY,                                       XK_j,                     focusstackvis,                 {.i = +1 } },
-    { MODKEY,                                       XK_k,                     focusstackvis,                 {.i = -1 } },
-    { MODKEY|ShiftMask,                             XK_j,                     focusstackhid,                 {.i = +1 } },
-    { MODKEY|ShiftMask,                             XK_k,                     focusstackhid,                 {.i = -1 } },
+    { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
+    { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+
     { MODKEY,                                       XK_i,                     incnmaster,                    {.i = +1 } },
     { MODKEY,                                       XK_d,                     incnmaster,                    {.i = -1 } },
     { MODKEY,                                       XK_o,                     resetnmaster,                  {0} },
@@ -190,9 +207,6 @@ static const Key keys[] = {
     { MODKEY,                                       XK_period,                focusmon,                      {.i = +1 } },
     { MODKEY|ShiftMask,                             XK_comma,                 tagmon,                        {.i = -1 } },
     { MODKEY|ShiftMask,                             XK_period,                tagmon,                        {.i = +1 } },
-    { MODKEY,                                       XK_s,                     show,                          {0} },
-    { MODKEY|ShiftMask,                             XK_s,                     showall,                       {0} },
-    { MODKEY,                                       XK_z,                     hide,                          {0} },
 
     TAGKEYS(                                        XK_1,                                                     0)
     TAGKEYS(                                        XK_2,                                                     1)
@@ -214,7 +228,6 @@ static const Button buttons[] = {
     /* click                event mask               button          function               argument */
     { ClkLtSymbol,          0,                       Button1,        setlayout,             {0} },
     { ClkLtSymbol,          0,                       Button3,        setlayout,             {.v = &layouts[2]} },
-    { ClkWinTitle,          0,                       Button1,        togglewin,             {0} },
     { ClkWinTitle,          0,                       Button2,        zoom,                  {0} },
     { ClkStatusText,        0,                       Button2,        spawn,                 {.v = termcmd } },
     

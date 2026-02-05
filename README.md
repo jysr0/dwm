@@ -3,7 +3,7 @@
 ## INSTALATION
 1. make sure xorg-xinit and dmenu are installed.
 2. append "exec startx dwm" (without double quotes) at end of your (bash_profile or xprofile).
-3. git clone https://github.com/jysr0/dwm-6.6 && cd dwm-6.6
+3. git clone https://github.com/jysr0/dwm && cd dwm
 4. sudo make clean install && reboot
 5. (win + r) to run a program, (win + shift + q) to quit dwm.
 ### dwmblocks-async
@@ -13,7 +13,6 @@ If some issues happen with the clicking see [issues](https://github.com/UtkarshV
 Look for config.def.h's keys array.
 ## PATCHES
 [vanitygaps](https://dwm.suckless.org/patches/vanitygaps/), the one that includes most layouts.  <br />
-[awesomebar](https://dwm.suckless.org/patches/awesomebar/).  <br />
 [alpha](https://dwm.suckless.org/patches/alpha/), the "fixborders" one.  <br />
 [hide vacant tags](https://dwm.suckless.org/patches/hide_vacant_tags/).  <br />
 [pertag](https://dwm.suckless.org/patches/pertag/).  <br />
@@ -27,13 +26,15 @@ Look for config.def.h's keys array.
 [bulkill](https://dwm.suckless.org/patches/bulkill/), the "safe" one.  <br />
 [tiledmove](https://dwm.suckless.org/patches/tiledmove/).  <br />
 [togglefloatingcenter](https://dwm.suckless.org/patches/togglefloatingcenter/).  <br />
-[shift tools](https://dwm.suckless.org/patches/shift-tools/), the "\*.c" one.  <br />
+[shift tools](https://dwm.suckless.org/patches/shift-tools/), the "scratchpads" one.  <br />
 [alwayscenter](https://dwm.suckless.org/patches/alwayscenter/).  <br />
 [allowkillrule](https://dwm.suckless.org/patches/allowkillrule/).  <br />
 [pwkl](https://dwm.suckless.org/patches/pwkl/).  <br />
 [inplacerotate](https://dwm.suckless.org/patches/inplacerotate/).  <br />
 [center](https://dwm.suckless.org/patches/center/).  <br />
 [sticky](https://dwm.suckless.org/patches/sticky/).  <br />
+[scratchpads](https://dwm.suckless.org/patches/scratchpads/).  <br />
+[cursorwarp](https://dwm.suckless.org/patches/cursorwarp/).  <br />
 ## LAYOUT PATCHES
 [nrowgrid](https://dwm.suckless.org/patches/nrowgrid/).  <br />
 [gaplessgrid](https://dwm.suckless.org/patches/gaplessgrid/).  <br />
