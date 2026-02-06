@@ -22,18 +22,26 @@ static const int allowkill          = 1;        /* allow killing clients by defa
 static const char *fonts[]          = { "CaskaydiaMono NFM:size=12", "Noto Color Emoji:pixelsize=14:antialias=true:autohint=true" };
 static const char dmenufont[]       = "CaskaydiaMono NFM:size=12";
 
-// colors
+// colorschemes
+static const char col_gray0[]       = "#000000";
 static const char col_gray1[]       = "#191919";
 static const char col_gray2[]       = "#333333";
 static const char col_gray3[]       = "#555555";
 static const char col_gray4[]       = "#aaaaaa";
 static const char col_gray5[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
+static const char col_cyan1[]       = "#00aaff";
 static const char col_redb[]        = "#660000";
-static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray4, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray5, /*col_gray1*/ col_cyan, /*col_redb*/ col_cyan },
+static const char *colors[][SchemeN][3] = {
+		/*               fg         bg         border   */
+	{ /* dark */
+		[SchemeNorm] = { col_gray4, col_gray1, col_gray2 },
+		[SchemeSel]  = { col_gray5, col_cyan,  col_cyan  },
+	},
+	{ /* light */
+		[SchemeNorm] = { col_gray1, col_gray4, col_gray3 },
+		[SchemeSel]  = { col_gray0, col_cyan1,  col_cyan1  },
+	},
 };
 
 /* scratchpads */
@@ -129,6 +137,9 @@ static const Key keys[] = {
     { MODKEY,                                       XK_r,                     spawn,                         {.v = dmenucmd } },
     { MODKEY,                                       XK_Return,                spawn,                         {.v = termcmd } },
     
+    // colorschemes
+    { MODKEY,                                       XK_s,                     setscheme,                     {.i = +1 } },
+
     // toggle bar on/off
     { MODKEY,                                       XK_b,                     togglebar,                     {0} },
    

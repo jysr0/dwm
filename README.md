@@ -34,6 +34,7 @@ Look for config.def.h's keys array.
 [sticky](https://dwm.suckless.org/patches/sticky/).  <br />
 [scratchpads](https://dwm.suckless.org/patches/scratchpads/).  <br />
 [cursorwarp](https://dwm.suckless.org/patches/cursorwarp/).  <br />
+[colorschemes](https://dwm.suckless.org/patches/colorschemes/).  <br />
 ## LAYOUT PATCHES
 [nrowgrid](https://dwm.suckless.org/patches/nrowgrid/).  <br />
 [gaplessgrid](https://dwm.suckless.org/patches/gaplessgrid/).  <br />
