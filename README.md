@@ -2,7 +2,7 @@
 ![](dwm-6.6.png)
 ## INSTALATION
 1. make sure xorg-xinit and dmenu are installed.
-2. append "exec startx dwm" (without double quotes) at end of your .bash_profile file.
+2. append "exec startx dwm" (without double quotes) at end of your shell profile.
 3. `git clone https://github.com/jysr0/dwm && cd dwm`
 4. `sudo make clean install && reboot`
 5. `win + r` to run a program, `win + shift + q` to quit dwm.
