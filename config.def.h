@@ -24,14 +24,13 @@ static const char dmenufont[]       = "CaskaydiaMono NFM:size=12";
 
 // colorschemes
 static const char col_gray0[]       = "#000000";
-static const char col_gray1[]       = "#191919";
+static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#333333";
 static const char col_gray3[]       = "#555555";
-static const char col_gray4[]       = "#aaaaaa";
-static const char col_gray45[]      = "#c0c0c0";
+static const char col_gray4[]       = "#bbbbbb";
 static const char col_gray5[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
-static const char col_sky[]         = "#87ceeb";
+static const char col_sky[]         = "#008ac1";
 static const char col_redb[]        = "#660000";
 static const char *colors[][SchemeN][3] = {
 		/*               fg         bg         border   */
@@ -40,7 +39,7 @@ static const char *colors[][SchemeN][3] = {
 		[SchemeSel]  = { col_gray5, col_cyan,  col_cyan  },
 	},
 	{ /* light */
-		[SchemeNorm] = { col_gray1, col_gray45, col_gray3 },
+		[SchemeNorm] = { col_gray1, col_gray5, col_gray3 },
 		[SchemeSel]  = { col_gray0, col_sky,  col_sky  },
 	},
 };
