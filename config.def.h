@@ -19,8 +19,8 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int allowkill          = 1;        /* allow killing clients by default? */
 
 // fonts
-static const char *fonts[]          = { "CaskaydiaMono NFM:style=SemiLight:size=13", "Noto Color Emoji:pixelsize=13:antialias=true:autohint=true" };
-static const char dmenufont[]       = "CaskaydiaMono NFM:style=SemiLight:size=11";
+static const char *fonts[]          = { "DejaVuSansM Nerd Font Mono:style=Regular:size=14", "Noto Color Emoji:pixelsize=14:antialias=true:autohint=true" };
+static const char dmenufont[]       = "DejaVuSansM Nerd Font Mono:style=Regular:size=10";
 
 // colorschemes
 static const char col_gray0[]       = "#000000";
