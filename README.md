@@ -1,5 +1,5 @@
 # dwm-6.6 build
-![](dwm-6.6.png)
+![](dwm.png)
 ## INSTALATION
 1. make sure xorg-xinit and dmenu are installed.
 2. append "exec startx dwm" (without double quotes) at end of your shell profile e.g. .profile or .bash_profile.
