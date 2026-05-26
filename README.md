@@ -5,7 +5,7 @@
 2. append "exec startx dwm" (without double quotes) at end of your shell profile e.g. .profile or .bash_profile.
 3. `git clone https://github.com/jysr0/dwm && cd dwm`
 4. `sudo make clean install && reboot`
-5. `win + r` to run a program, `win + shift + q` to quit dwm.
+5. `win + p` to run a program, `win + shift + q` to quit dwm.
 #### dwmblocks-async
 Install and configure [dwmblocks-async](https://github.com/UtkarshVerma/dwmblocks-async) with some scripts, and that's it.
 If some issues happen with the clicking see [issues](https://github.com/UtkarshVerma/dwmblocks-async/issues).
