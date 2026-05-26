@@ -1,14 +1,14 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int snap      = 10;       /* snap pixel */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int snap      = 32;       /* snap pixel */
 
 // vanitygaps
-static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
+static const unsigned int gappih    = 5;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 5;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 5;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 5;       /* vert outer gap between windows and screen edge */
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 
 // bar
@@ -19,8 +19,8 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int allowkill          = 1;        /* allow killing clients by default? */
 
 // fonts
-static const char *fonts[]          = { "DejaVuSansM Nerd Font Mono:style=Regular:size=14", "Noto Color Emoji:pixelsize=14:antialias=true:autohint=true" };
-static const char dmenufont[]       = "DejaVuSansM Nerd Font Mono:style=Regular:size=10";
+static const char *fonts[]          = { "CaskaydiaMono NFM:style=Regular:size=13", "Noto Color Emoji:pixelsize=13:antialias=true:autohint=true" };
+static const char dmenufont[]       = "monospace:style=Regular:size=10";
 
 // colorschemes
 static const char col_gray0[]       = "#000000";
@@ -135,7 +135,7 @@ static const Key keys[] = {
     /* modifier                                     key                       function                       argument */
     
     // spawn programs
-    { MODKEY,                                       XK_r,                     spawn,                         {.v = dmenucmd } },
+    { MODKEY,                                       XK_p,                     spawn,                         {.v = dmenucmd } },
     { MODKEY,                                       XK_Return,                spawn,                         {.v = termcmd } },
     
     // colorschemes
@@ -154,22 +154,22 @@ static const Key keys[] = {
     { MODKEY,                                       XK_0,                     view,                          {.ui = ~0 } },
 
     // scratchpads
-    { MODKEY,            			    XK_z,  	              togglescratch,                 {.ui = 0 } },
-    //{ MODKEY|ShiftMask,            		    XK_e,	              togglescratch,                 {.ui = 1 } },
+    { MODKEY,            			                XK_z,  	                  togglescratch,                 {.ui = 0 } },
+    //{ MODKEY|ShiftMask,            		          XK_e,	                    togglescratch,                 {.ui = 1 } },
 
     // shift tools
     { Mod1Mask,                                     XK_o,                     shiftviewclients,              { .i = +1 } },
     { Mod1Mask,	                                    XK_i,                     shiftviewclients,              { .i = -1 } },
     { Mod1Mask|ShiftMask,                           XK_o,                     shiftview,                     { .i = +1 } },
-    { Mod1Mask|ShiftMask,                           XK_i,	              shiftview,                     { .i = -1 } },
+    { Mod1Mask|ShiftMask,                           XK_i,	                  shiftview,                     { .i = -1 } },
     { Mod1Mask,	                                    XK_l,                     shifttag,                      { .i = +1 } },
     { Mod1Mask,	                                    XK_k,                     shifttag,                      { .i = -1 } },
-    { Mod1Mask|ShiftMask,	                    XK_l,                     shifttagclients,               { .i = +1 } },
-    { Mod1Mask|ShiftMask,	                    XK_k,                     shifttagclients,               { .i = -1 } },
+    { Mod1Mask|ShiftMask,	                        XK_l,                     shifttagclients,               { .i = +1 } },
+    { Mod1Mask|ShiftMask,	                        XK_k,                     shifttagclients,               { .i = -1 } },
     { Mod1Mask,	                                    XK_period,                shiftboth,                     { .i = +1 } },
     { Mod1Mask,	                                    XK_comma,                 shiftboth,                     { .i = -1 } },
-    { Mod1Mask|ShiftMask,	                    XK_period,                shiftswaptags,                 { .i = +1 } },
-    { Mod1Mask|ShiftMask,	                    XK_comma,                 shiftswaptags,                 { .i = -1 } },
+    { Mod1Mask|ShiftMask,	                        XK_period,                shiftswaptags,                 { .i = +1 } },
+    { Mod1Mask|ShiftMask,	                        XK_comma,                 shiftswaptags,                 { .i = -1 } },
     
     // allowkillrule
     { MODKEY,                                       XK_q,                     toggleallowkill,               {0} },
@@ -237,12 +237,12 @@ static const Key keys[] = {
     { MODKEY,                                       XK_t,                     setlayout,                     {.v = &layouts[0]} }, // tile
     { MODKEY,                                       XK_f,                     setlayout,                     {.v = &layouts[1]} }, // float
     { MODKEY,                                       XK_m,                     setlayout,                     {.v = &layouts[2]} }, // monocle
-    { MODKEY|ShiftMask,                             XK_backslash,             setlayout,                     {.v = &layouts[3]} }, // spiral
-    { MODKEY,                                       XK_backslash,             setlayout,                     {.v = &layouts[4]} }, // dwindle 
+    { MODKEY|ShiftMask,                             XK_r,                     setlayout,                     {.v = &layouts[3]} }, // spiral
+    { MODKEY,                                       XK_r,                     setlayout,                     {.v = &layouts[4]} }, // dwindle 
     { MODKEY|ShiftMask,                             XK_d,                     setlayout,                     {.v = &layouts[5]} }, // deck
     { MODKEY,                                       XK_u,                     setlayout,                     {.v = &layouts[6]} }, // bstack
     { MODKEY|ShiftMask,                             XK_u,                     setlayout,                     {.v = &layouts[7]} }, // bstackhoriz
-    { MODKEY|ShiftMask,                             XK_semicolon,             setlayout,                     {.v = &layouts[9]} }, // nrowgrid
+    { MODKEY|ShiftMask,                             XK_y,                     setlayout,                     {.v = &layouts[9]} }, // nrowgrid
     { MODKEY,                                       XK_p,                     setlayout,                     {.v = &layouts[12]} }, // centeredmaster
     { MODKEY|ShiftMask,                             XK_p,                     setlayout,                     {.v = &layouts[13]} }, // centeredfloatingmaster
     
@@ -280,8 +280,8 @@ static const Key keys[] = {
     TAGKEYS(                                        XK_9,                                                     8)
   
     // exit dwm
-    //{ MODKEY|ShiftMask,             XK_q,      quit,            {0} },
-    { MODKEY|ShiftMask,             XK_q,      spawn,           SHCMD("loginctl -s 15 --no-ask-password terminate-session ${XDG_SESSION_ID}") },
+    { MODKEY|ShiftMask,             XK_q,      quit,            {0} },
+    //{ MODKEY|ShiftMask,             XK_q,      spawn,           SHCMD("loginctl -s 15 --no-ask-password terminate-session ${XDG_SESSION_ID}") },
 };
 
 /* button definitions */
